@@ -3,10 +3,11 @@ package Game;
 import People.Person;
 import Rooms.Room;
 import Rooms.WinningRoom;
+import Rooms.Named;
 
 import java.util.Scanner;
 
-public class Runner {
+public class  Runner {
 	
 
 	private static boolean gameOn = true;
@@ -31,6 +32,7 @@ public class Runner {
 
 		int a=(int)(Math.random()*building.length);
 		int b=(int)(Math.random()*building.length);
+		building[a][b]=new Named(x,y);
 		 
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
