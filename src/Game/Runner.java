@@ -4,6 +4,8 @@ import People.Person;
 import Rooms.Room;
 import Rooms.WinningRoom;
 import Rooms.Named;
+import Board.Board;
+
 
 import java.util.Scanner;
 
@@ -13,7 +15,7 @@ public class  Runner {
 	private static boolean gameOn = true;
 	
 	public static void main(String[] args)
-	{
+    {
 		Room[][] building = new Room[5][5];
 		
 		//Fill the building with normal rooms
@@ -40,6 +42,7 @@ public class  Runner {
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
+		    System.out.println();
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
 			if(validMove(move, player1, building))
