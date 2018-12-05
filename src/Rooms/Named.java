@@ -1,39 +1,28 @@
-package People;
+package Rooms;
 
-/**
- * Person represents the player as they move through the game.
- */
-public class Person {
-	String firstName;
-	String familyName;
-	int xLoc, yLoc;
+import Game.Runner;
+import People.Person;
 
+public class Named extends Room{
+        public Named(int x, int y) {
+            super(x, y);
 
+        }
 
-	public int getxLoc() {
-		return xLoc;
-	}
+        /**
+         * Triggers the game ending conditions.
+         *
+         * @param x the Person entering
+         */
+        @Override
+        public void enterRoom(Person x) {
 
-	public void setxLoc(int xLoc) {
-		this.xLoc = xLoc;
-	}
+            occupant = x;
+            x.setxLoc(this.xLoc);
+            x.setyLoc(this.yLoc);
+            System.out.println("You managed to get across.");
+            Runner.gameOff();
+        }
 
-	public int getyLoc() {
-		return yLoc;
-	}
+    }
 
-	public void setyLoc(int yLoc) {
-		this.yLoc = yLoc;
-	}
-
-
-	public Person (String firstName, String familyName, int xLoc, int yLoc)
-	{
-		this.firstName = firstName;
-		this.familyName = familyName;
-		this.xLoc = xLoc;
-		this.yLoc = yLoc;
-	}
-
-
-}
