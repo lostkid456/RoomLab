@@ -9,6 +9,7 @@ public class Person {
 	int xLoc, yLoc;
 
 
+
 	public int getxLoc() {
 		return xLoc;
 	}
@@ -24,6 +25,7 @@ public class Person {
 	public void setyLoc(int yLoc) {
 		this.yLoc = yLoc;
 	}
+
 
 	public Person (String firstName, String familyName, int xLoc, int yLoc)
 	{
