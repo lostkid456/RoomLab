@@ -1,20 +1,39 @@
-package Rooms;
+package People;
 
-import Game.Runner;
-import People.Person;
+/**
+ * Person represents the player as they move through the game.
+ */
+public class Person {
+	String firstName;
+	String familyName;
+	int xLoc, yLoc;
 
-public class Named extends Room{
 
-    public Named(int x,int y){
-        super(x,y);
-    }
 
-    @Override
-    public void enterRoom(Person x){
-        occupant=x;
-        x.setxLoc(this.xLoc);
-        x.setyLoc(this.yLoc);
-        System.out.println("You have found the ghost!");
-        Runner.gameOff();
-    }
+	public int getxLoc() {
+		return xLoc;
+	}
+
+	public void setxLoc(int xLoc) {
+		this.xLoc = xLoc;
+	}
+
+	public int getyLoc() {
+		return yLoc;
+	}
+
+	public void setyLoc(int yLoc) {
+		this.yLoc = yLoc;
+	}
+
+
+	public Person (String firstName, String familyName, int xLoc, int yLoc)
+	{
+		this.firstName = firstName;
+		this.familyName = familyName;
+		this.xLoc = xLoc;
+		this.yLoc = yLoc;
+	}
+
+
 }
