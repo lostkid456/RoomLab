@@ -1,6 +1,6 @@
 package Rooms;
 
-import Game.Runner;
+import Pokemon.Pokemon;
 import People.Person;
 
 public class Named extends Room{
@@ -20,8 +20,8 @@ public class Named extends Room{
             occupant = x;
             x.setxLoc(this.xLoc);
             x.setyLoc(this.yLoc);
-            System.out.println("You managed to get across.");
-            Runner.gameOff();
+            System.out.println("You have encountered a wild Pokemon! ROOOAAAR!");
+
         }
 
     }

@@ -5,6 +5,8 @@ import Rooms.Room;
 import Rooms.WinningRoom;
 import Rooms.Named;
 import Board.Board;
+import Pokemon.Pokemon;
+import Pokemon.Type;
 
 
 import java.util.Scanner;
@@ -39,9 +41,14 @@ public class  Runner {
 		Board Board = new Board(building);
 		 
 		 //Setup player 1 and the input scanner
+        Pokemon pokemon1 = new Pokemon("Charmander",50,"Fire");
+        Pokemon pokemon2= new Pokemon("Squirtle",60,"Water");
+        Pokemon pokemon3= new Pokemon("Bulbasaur",50,"Grass");
+        Pokemon pokemonAlpha= new Pokemon("Pikachu",100,"Electric");
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
+		String ChoosePokemon =in.nextLine();
 		while(gameOn)
 		{
 		    Board.print();
