@@ -1,9 +1,12 @@
 package Rooms;
 
 import People.Person;
+import Pokemon.Pokemon;
 
 public class Room {
+    Pokemon fill;
     Person occupant;
+    Pokemon enemy;
     int xLoc, yLoc;
 
     public Room(int x, int y) {
@@ -16,9 +19,13 @@ public class Room {
      *
      * @param x the Person entering
      */
-    public void enterRoom(Person x) {
+    public void enterRoom(Person x,Pokemon y,Pokemon z) {
         System.out.println("You enter a plain old room");
         occupant = x;
+        fill=y;
+        enemy=z;
+        y.setxLoc(this.xLoc);
+        y.setyLoc(this.yLoc);
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
     }
@@ -28,12 +35,14 @@ public class Room {
      *
      * @param x
      */
-    public void leaveRoom(Person x) {
+    public void leaveRoom(Person x,Pokemon y,Pokemon z) {
         occupant = null;
+        fill=null;
+        enemy=null;
     }
 
     public String toString() {
-        if (occupant!=null) {
+        if (occupant!=null && fill!=null) {
             return ("P");
         } else {
             return ("?");
