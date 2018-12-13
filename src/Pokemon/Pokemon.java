@@ -1,21 +1,24 @@
 package Pokemon;
+import Pokemon.Pokem;
 
-public class Pokemon {
+public class Pokemon implements Pokem {
     String name;
     int Hp;
     String type;
     int xLoc, yLoc;
 
-    public String getType(){
+    public String getType() {
         return type;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
-    public int getHp(){
+
+    public int getHp() {
         return Hp;
     }
+
     public int getxLoc() {
         return xLoc;
     }
@@ -38,5 +41,9 @@ public class Pokemon {
         this.type=type;
         this.xLoc = xLoc;
         this.yLoc = yLoc;
+
     }
-}
+    public int loseHelath(int Hp){
+        return this.Hp-10;
+    }
+}   

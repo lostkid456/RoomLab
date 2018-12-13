@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 import People.Person;
 import Pokemon.Pokemon;
+import Pokemon.Pokem;
 
-public class Battle extends FoundPokemon{
+public class Battle extends FoundPokemon implements Pokem{
 
     public Battle(int x, int y){
         super(x,y);
@@ -22,12 +23,20 @@ public class Battle extends FoundPokemon{
             z.setxLoc(this.xLoc);
             z.setyLoc(this.yLoc);
     }
+    public int getHp(){
+        return(this.getHp());
+    }
 
-    public void haveBattle(Pokemon y,Pokemon z){
+    public void takedamage(Pokemon y){
+
+    }
+
+    public void battle(Pokemon y,Pokemon z){
         Scanner input= new Scanner(System.in);
         System.out.print("Attack or Run?");
         String answer=input.nextLine();
         if(answer=="Attack"||answer=="attack"){
         }
+
     }
 }

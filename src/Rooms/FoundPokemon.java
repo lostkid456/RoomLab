@@ -28,5 +28,7 @@ public class FoundPokemon extends Room{
             System.out.println("You have encountered a wild Pokemon! ROOOAAAR!");
         }
 
+
+
     }
 
