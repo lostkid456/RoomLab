@@ -1,13 +1,13 @@
 package Pokemon;
-import Pokemon.Pokem;
 
-public class Pokemon implements Pokem {
+public abstract class Pokemon {
     String name;
     int Hp;
     String type;
     int xLoc, yLoc;
 
-    public String getType() {
+    public String getType()
+    {
         return type;
     }
 
@@ -42,8 +42,5 @@ public class Pokemon implements Pokem {
         this.xLoc = xLoc;
         this.yLoc = yLoc;
 
-    }
-    public int loseHelath(int Hp){
-        return this.Hp-10;
     }
 }   

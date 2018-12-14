@@ -6,8 +6,6 @@ import Rooms.WinningRoom;
 import Rooms.FoundPokemon;
 import Board.Board;
 import Pokemon.Pokemon;
-import Pokemon.Pokem;
-
 
 
 import java.util.Scanner;
