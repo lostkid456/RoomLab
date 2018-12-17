@@ -42,4 +42,10 @@ public class Pokemon {
         this.xLoc = xLoc;
         this.yLoc = yLoc;
     }
+    public void restoreHealth(int Hp){
+        this.Hp=Hp+10;
+    }
+    public void attack(int Hp){
+        this.Hp=Hp-10;
+    }
 }   

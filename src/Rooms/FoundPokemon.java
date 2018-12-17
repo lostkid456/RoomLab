@@ -51,7 +51,7 @@ public class FoundPokemon extends Room {
             }
             System.out.println(health + healthbar);
             System.out.println("You did " + damage + " damage!");
-            enemy.attack(x);
+            enemy.attack(z);
             if (fill.getHp() < 0) {
                 break;
             }
