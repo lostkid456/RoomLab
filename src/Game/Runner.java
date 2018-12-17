@@ -15,38 +15,47 @@ public class  Runner {
 
 	private static boolean gameOn = true;
 	
-	public static void main(String[] args)
-    {
-		Room[][] building = new Room[5][5];
-		
-		//Fill the building with normal rooms
-		for (int x = 0; x<building.length; x++)
-		{
-			for (int y = 0; y < building[x].length; y++)
-			{
-				building[x][y] = new Room(x,y);
-			}
-		}
+	public static void main(String[] args) {
+        Room[][] building = new Room[5][5];
 
-		//Create a random winning room.
-		int x = (int)(Math.random()*building.length);
-		int y = (int)(Math.random()*building.length);
-		building[x][y] = new WinningRoom(x, y);
+        //Fill the building with normal rooms
+        for (int x = 0; x < building.length; x++) {
+            for (int y = 0; y < building[x].length; y++) {
+                building[x][y] = new Room(x, y);
+            }
+        }
 
-		int a=(int)(Math.random()*building.length);
-		int b=(int)(Math.random()*building.length);
-		building[a][b]=new FoundPokemon(x,y);
+        //Create a random winning room.
+        int x = (int) (Math.random() * building.length);
+        int y = (int) (Math.random() * building.length);
+        building[x][y] = new WinningRoom(x, y);
 
-		Board Board = new Board(building);
-		 
-		 //Setup player 1 and the input scanner
-        Pokemon pokemon1 = new Pokemon("Charmander",50,"Fire",0,0);
-        Pokemon pokemon2= new Pokemon("Squirtle",60,"Water",0,0);
-        Pokemon pokemon3= new Pokemon("Bulbasaur",50,"Grass",0,0);
-        Pokemon pokemonAlpha= new Pokemon("Pikachu",100,"Electric",0,0);
+        int a = (int) (Math.random() * building.length);
+        int b = (int) (Math.random() * building.length);
+        building[a][b] = new FoundPokemon(x, y);
+
+        Board Board = new Board(building);
+
+        //Setup player 1 and the input scanner
+        Pokemon pokemon1 = new Pokemon("Charmander", 50, "Fire", 0, 0);
+        Pokemon pokemon2 = new Pokemon("Squirtle", 60, "Water", 0, 0);
+        Pokemon pokemon3 = new Pokemon("Bulbasaur", 50, "Grass", 0, 0);
+        Pokemon pokemonAlpha = new Pokemon("Pikachu", 100, "Electric", 0, 0);
+        Pokemon Mystery = new Pokemon("ANNOYING CREATURE", (int) (Math.random() * 100) + 50, "Null", 0, 0);
+        Scanner in = new Scanner(System.in);
+        System.out.println("Which Pokemon will you choose for your journey? \n Charmander, Squirtle,Bulbasaur, or Pikachu");
+        String input = in.nextLine();
+        if (input.equals("Charmander")) {
+            Pokemon starterPokemon = pokemon1;
+        } else if (input.equals("Squirtle")) {
+            Pokemon starterPokemon = pokemon2;
+        } else if (input.equals("Squirtle")) {
+            Pokemon starterPokemon = pokemon3;
+        } else {
+            Pokemon starterPokemom = pokemonAlpha;
+        }
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
-		building[0][0].enterRoom(player1,pokemon1,pokemon2);
-		Scanner in = new Scanner(System.in);
+		building[0][0].enterRoom(player1,starterPokemon,Mystery);
 		while(gameOn)
 		{
 		    Board.print();

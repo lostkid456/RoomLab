@@ -1,6 +1,6 @@
 package Pokemon;
 
-public abstract class Pokemon {
+public class Pokemon {
     String name;
     int Hp;
     String type;
@@ -41,6 +41,5 @@ public abstract class Pokemon {
         this.type=type;
         this.xLoc = xLoc;
         this.yLoc = yLoc;
-
     }
 }   
