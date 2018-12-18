@@ -31,7 +31,6 @@ public class FoundPokemon extends Room {
             healthbar += "=";
             healthbarlength++;
         }
-        int damage;
         int dealt = 0;
         System.out.println(health + healthbar);
         while (dealt < healthbarlength) {
@@ -39,18 +38,16 @@ public class FoundPokemon extends Room {
             System.out.print("What attack do you want to do? \n Normal attack or Special attack.\n You only have one charge for your special attack so be wary");
             String input = in.nextLine();
             if (input.equals("Normal") || input.equals("normal")) {
-                damage = 30;
-                dealt += damage;
+                dealt = 30;
             } else if (input.equals("Special") || input.equals("special")) {
-                damage = 10000;
-                dealt += damage;
+                dealt =20000;
             }
-            if (healthbar.length() - damage > 0) {
-                healthbar = healthbar.substring(0, healthbar.length() - damage);
+            if (healthbar.length() - dealt > 0) {
+                healthbar = healthbar.substring(0, healthbar.length() - dealt);
                 System.out.println(enemy);
             }
             System.out.println(health + healthbar);
-            System.out.println("You did " + damage + " damage!");
+            System.out.println("You did " + dealt + " damage!");
             enemy.attack(z);
             if (fill.getHp() < 0) {
                 break;

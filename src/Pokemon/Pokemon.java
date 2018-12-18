@@ -45,7 +45,7 @@ public class Pokemon {
     public void restoreHealth(int Hp){
         this.Hp=Hp+10;
     }
-    public void attack(int Hp){
-        this.Hp=Hp-10;
+    public void attack(Pokemon z){
+        ;
     }
 }   

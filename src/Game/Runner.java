@@ -45,14 +45,17 @@ public class  Runner {
         Scanner in = new Scanner(System.in);
         System.out.println("Which Pokemon will you choose for your journey? \n Charmander, Squirtle,Bulbasaur, or Pikachu");
         String input = in.nextLine();
+        Pokemon starterPokemon=null;
         if (input.equals("Charmander")) {
-            Pokemon starterPokemon = pokemon1;
+             starterPokemon = pokemon1;
         } else if (input.equals("Squirtle")) {
-            Pokemon starterPokemon = pokemon2;
-        } else if (input.equals("Squirtle")) {
-            Pokemon starterPokemon = pokemon3;
+             starterPokemon = pokemon2;
+        } else if (input.equals("Bulbasaur")) {
+             starterPokemon = pokemon3;
+        } else if(input.equals("Bulbasaur")){
+             starterPokemon = pokemonAlpha;
         } else {
-            Pokemon starterPokemom = pokemonAlpha;
+            System.out.println("This is not a valid choice.");
         }
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1,starterPokemon,Mystery);
