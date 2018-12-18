@@ -8,6 +8,9 @@ public class Board {
     public Board(Room[][] board) {
         this.board = board;
     }
+    public Board(int x,int y){
+
+    }
 
     public void print() {
         String row ="";

@@ -6,6 +6,11 @@ import Rooms.WinningRoom;
 import Rooms.FoundPokemon;
 import Board.Board;
 import Pokemon.Pokemon;
+import Pokemon.Bulbasaur;
+import Pokemon.Pikachu;
+import Pokemon.Charmander;
+import Pokemon.Squirtle;
+import Pokemon.ANNOYINGPOKEMON;
 
 
 import java.util.Scanner;
@@ -28,7 +33,7 @@ public class  Runner {
         //Create a random winning room.
         int x = (int) (Math.random() * building.length);
         int y = (int) (Math.random() * building.length);
-        building[x][y] = new WinningRoom(x, y);
+        building[x][y] = new WinningRoom(building.length, building.length);
 
         int a = (int) (Math.random() * building.length);
         int b = (int) (Math.random() * building.length);
@@ -37,34 +42,34 @@ public class  Runner {
         Board Board = new Board(building);
 
         //Setup player 1 and the input scanner
-        Pokemon pokemon1 = new Pokemon("Charmander", 50, "Fire", 0, 0);
-        Pokemon pokemon2 = new Pokemon("Squirtle", 60, "Water", 0, 0);
-        Pokemon pokemon3 = new Pokemon("Bulbasaur", 50, "Grass", 0, 0);
-        Pokemon pokemonAlpha = new Pokemon("Pikachu", 100, "Electric", 0, 0);
-        Pokemon Mystery = new Pokemon("ANNOYING CREATURE", (int) (Math.random() * 100) + 50, "Null", 0, 0);
+		Bulbasaur bulbasaur=new Bulbasaur("Bulbasaur",100,"Grass",0,0);
+		Charmander charmander=new Charmander("Charmander",100,"Fire",0,0);
+		Squirtle squirtle=new Squirtle("Squirtle",100,"Water",0,0);
+		Pikachu pikachu=new Pikachu("Pikachu",100,"Electric",0,0);
+		ANNOYINGPOKEMON annoyingpokemon=new ANNOYINGPOKEMON("Annoying Pokemon",(int)(Math.random()*90+25),"null",a,b);
         Scanner in = new Scanner(System.in);
         System.out.println("Which Pokemon will you choose for your journey? \n Charmander, Squirtle,Bulbasaur, or Pikachu");
         String input = in.nextLine();
         Pokemon starterPokemon=null;
-        if (input.equals("Charmander")) {
-             starterPokemon = pokemon1;
-        } else if (input.equals("Squirtle")) {
-             starterPokemon = pokemon2;
-        } else if (input.equals("Bulbasaur")) {
-             starterPokemon = pokemon3;
-        } else if(input.equals("Bulbasaur")){
-             starterPokemon = pokemonAlpha;
+        if (input.equals("Charmander")||input.equals("charmander")) {
+             starterPokemon =charmander ;
+        } else if (input.equals("Squirtle")||input.equals("squirtle")){
+             starterPokemon = squirtle;
+        } else if (input.equals("Bulbasaur")||input.equals("bulbasaur")) {
+             starterPokemon = bulbasaur;
+        } else if(input.equals("Pikachu")||input.equals("pikachu")){
+             starterPokemon = pikachu;
         } else {
             System.out.println("This is not a valid choice.");
         }
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
-		building[0][0].enterRoom(player1,starterPokemon,Mystery);
+		building[0][0].enterRoom(player1,starterPokemon,annoyingpokemon);
 		while(gameOn)
 		{
 		    Board.print();
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
-			if(validMove(move, player1,pokemon1,pokemon2, building))
+			if(validMove(move, player1,starterPokemon,annoyingpokemon, building))
 			{
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
 				
