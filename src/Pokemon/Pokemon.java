@@ -46,6 +46,7 @@ public class Pokemon {
         this.Hp=Hp+10;
     }
     public void attack(Pokemon z){
-        ;
+            int dealt=30;
+            z.Hp-=dealt;
     }
 }   

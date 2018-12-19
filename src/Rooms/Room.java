@@ -41,6 +41,7 @@ public class Room {
         enemy=null;
     }
 
+    //Overrides the board and shows a P for where the player is and ? for unknown areas
     public String toString() {
         if (occupant!=null && fill!=null) {
             return ("P");

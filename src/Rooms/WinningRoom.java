@@ -24,13 +24,13 @@ public class WinningRoom extends Room
 		enemy=z;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-        y.setxLoc(this.xLoc);
-        y.setyLoc(this.yLoc);
-        z.setxLoc(this.xLoc);
-        z.setyLoc(this.yLoc);
+		y.setxLoc(this.xLoc);
+		y.setyLoc(this.yLoc);
+		z.setxLoc(this.xLoc);
+		z.setyLoc(this.yLoc);
 		System.out.println("You managed to get across.");
 		Runner.gameOff();
 	}
-	
+
 
 }
