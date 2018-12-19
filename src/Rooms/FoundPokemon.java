@@ -1,6 +1,5 @@
 package Rooms;
 
-import Game.Runner;
 import Pokemon.Pokemon;
 import People.Person;
 import java.util.Scanner;
@@ -55,19 +54,13 @@ public class FoundPokemon extends Room {
             }
             if(fill.getHp() < 0){
                 System.out.println("GAME OVER.");
-                Runner.gameOff();
+
             }
             else {
                 System.out.println("========================");
                 System.out.println("\nYOU BEAT THE MONSTER!\n");
-                leaveRoom(x,y,z);
-            }
         }
     }
-
-    public void leaveRoom(Person x,Pokemon y,Pokemon z) {
-        occupant = null;
-        fill=null;
-        enemy=null;
     }
 }
+

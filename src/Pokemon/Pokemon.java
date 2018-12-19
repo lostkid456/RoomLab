@@ -1,6 +1,6 @@
 package Pokemon;
 
-public class Pokemon {
+public abstract class Pokemon {
     String name;
     int Hp;
     String type;
