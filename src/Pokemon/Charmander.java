@@ -5,13 +5,8 @@ public class Charmander extends Pokemon {
         super(name,Hp,type,xLoc,yLoc);
     }
     public void attack(Pokemon z){
-<<<<<<< HEAD
         int dealt=30;
         z.Hp-=dealt;
     }
 }
-=======
-        ;
-    }
-}
->>>>>>> origin/master
+
