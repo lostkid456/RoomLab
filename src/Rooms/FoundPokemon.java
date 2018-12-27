@@ -1,5 +1,6 @@
 package Rooms;
 
+import Game.Runner;
 import Pokemon.Pokemon;
 import People.Person;
 import java.util.Scanner;
@@ -27,6 +28,7 @@ public class FoundPokemon extends Room {
         String health = "\nHEALTH:   ";
         String healthbar = "";
         int healthbarlength = 0;
+        int specialcounter=1;
         for (int i = 0; i < enemy.getHp(); i++) {
             healthbar += "=";
             healthbarlength++;
@@ -39,8 +41,9 @@ public class FoundPokemon extends Room {
             String input = in.nextLine();
             if (input.equals("Normal") || input.equals("normal")) {
                 dealt = 30;
-            } else if (input.equals("Special") || input.equals("special")) {
+            } else if (input.equals("Special") || input.equals("special")&&specialcounter>0) {
                 dealt =20000;
+                specialcounter-=1;
             }
             if (healthbar.length() - dealt > 0) {
                 healthbar = healthbar.substring(0, healthbar.length() - dealt);
@@ -54,13 +57,19 @@ public class FoundPokemon extends Room {
             }
             if(fill.getHp() < 0){
                 System.out.println("GAME OVER.");
-
+                Runner.gameOff();
             }
             else {
                 System.out.println("========================");
                 System.out.println("\nYOU BEAT THE MONSTER!\n");
+                leaveRoom(x,y,z);
+            }
         }
     }
+
+    public void leaveRoom(Person x,Pokemon y,Pokemon z) {
+        occupant = null;
+        fill=null;
+        enemy=null;
     }
 }
-

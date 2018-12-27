@@ -5,7 +5,6 @@ public class ANNOYINGPOKEMON extends Pokemon{
         super(name,Hp,type,xLoc,yLoc);
     }
     public void attack(Pokemon y){
-        int damage;
         int dealt=30;
         y.Hp-=dealt;
     }
